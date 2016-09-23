@@ -1,0 +1,4 @@
+*.pyc
+**/*.pyc
+digTokenizerExtractor.egg-info/
+dist/
