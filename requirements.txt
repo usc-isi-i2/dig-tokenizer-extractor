@@ -1,2 +1,2 @@
-digExtractor>=0.1.7
+digExtractor>=0.2.0
 digCrfTokenizer>=0.1.5

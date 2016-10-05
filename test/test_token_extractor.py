@@ -12,7 +12,7 @@ class TestTokenizerExtractor(unittest.TestCase):
         e = TokenizerExtractor()
         ep = ExtractorProcessor().set_input_fields('a').set_output_field('e').set_extractor(e)
         updated_doc = ep.extract(doc)
-        self.assertEqual(updated_doc['e']['value'], ['my', 'name', 'is', 'foo'])
+        self.assertEqual(updated_doc['e'][0]['value'], ['my', 'name', 'is', 'foo'])
 
 if __name__ == '__main__':
     unittest.main()
