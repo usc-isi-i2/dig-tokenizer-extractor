@@ -27,7 +27,9 @@ class TokenizerExtractor(Extractor):
         return self
 
     def extract(self, doc):
-        return self.tokenizer.tokenize(doc['text'].lower())
+        results = list()
+        results.append(self.tokenizer.tokenize(doc['text'].lower()))
+        return results
 
     def get_renamed_input_fields(self):
         return self.renamed_input_fields;
