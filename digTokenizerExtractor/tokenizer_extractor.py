@@ -4,13 +4,16 @@ import copy
 
 class TokenizerExtractor(Extractor):
 
-    def __init__(self):
-        tokenizer = CrfTokenizer()
-        tokenizer.setRecognizePunctuation(True)
-        tokenizer.setRecognizeHtmlTags(True)
-        tokenizer.setSkipHtmlEntities(True)
-        tokenizer.setRecognizeHtmlEntities(True)
-        tokenizer.setSkipHtmlTags(True)
+    def __init__(self, setRecognizePunctuation=True, setRecognizeHtmlTags=True, setSkipHtmlEntities=True,
+        setRecognizeHtmlEntities=True, setSkipHtmlTags=True, recognize_linebreaks=False,
+                 create_structured_tokens=False):
+        tokenizer = CrfTokenizer(recognize_linebreaks=recognize_linebreaks,
+                                 create_structured_tokens=create_structured_tokens)
+        tokenizer.setRecognizePunctuation(setRecognizePunctuation)
+        tokenizer.setRecognizeHtmlTags(setRecognizeHtmlTags)
+        tokenizer.setSkipHtmlEntities(setSkipHtmlEntities)
+        tokenizer.setRecognizeHtmlEntities(setRecognizeHtmlEntities)
+        tokenizer.setSkipHtmlTags(setSkipHtmlTags)
         self.tokenizer = tokenizer
         self.metadata = {'extractor': 'tokenizer'}
         self.renamed_input_fields = 'text'
